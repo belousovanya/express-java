@@ -26,7 +26,7 @@ public class BreakContinueTasks {
 
         while (true) {
             System.out.print("Введите число: ");
-            number= scanner.nextInt();
+            number = scanner.nextInt();
             if (number < 0) {
                 System.out.println("Число меньше 0, сумма чисел до него: " + sum);
                 break;
@@ -56,6 +56,10 @@ public class BreakContinueTasks {
             number = scanner.nextInt();
             if (number < 0) {
                 continue;
+            }
+            if (number == 0) {
+                System.out.println("Вы ввели 0, программа завершена");
+                break;
             }
             System.out.println(number);
         }

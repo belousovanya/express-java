@@ -60,7 +60,7 @@ public class SwitchTasks {
         int key = score / 10;
 
         switch (key) {
-            case 10 -> System.out.println("A");
+            case 9, 10 -> System.out.println("A");
             case 8 -> System.out.println("B");
             case 7 -> System.out.println("C");
             case 6 -> System.out.println("D");
@@ -106,7 +106,7 @@ public class SwitchTasks {
             case "*":
                 System.out.println(a * b);
                 break;
-            case ":":
+            case "/":
                 if (b == 0) {
                     System.out.println("на 0 делить нельзя!");
                 } else {

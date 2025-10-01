@@ -17,7 +17,7 @@ public class ForTasks {
         // проверка на простое число
 //        checkPrimeNumber();
 
-        // проверка выаода чисел от 1 до 10
+        // проверка вывода чисел от 1 до 10
 //        printNumbers();
     }
 
@@ -65,7 +65,7 @@ public class ForTasks {
         if (number <= 1) {
             isPrime = false;
         } else {
-            for (int i = 2; i <= number - 1; i++) {
+            for (int i = 2; i <= Math.sqrt(number); i++) {
                 if (number % i == 0) {
                     isPrime = false;
                     break;
