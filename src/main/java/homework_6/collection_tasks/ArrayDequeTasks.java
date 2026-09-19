@@ -33,7 +33,7 @@ public class ArrayDequeTasks {
     public static void task2() {
         Deque<String> stack = new ArrayDeque<>();
 
-        stack.push("Первыый");
+        stack.push("Первый");
         stack.push("Второй");
         stack.push("Третий");
 

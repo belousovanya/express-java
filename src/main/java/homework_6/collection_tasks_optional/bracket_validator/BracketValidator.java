@@ -1,4 +1,4 @@
-package homework_6.bracket_validator;
+package homework_6.collection_tasks_optional.bracket_validator;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -24,28 +24,31 @@ public class BracketValidator {
                 if (brackets.isEmpty()) {
                     return false;
                 }
-            }
 
-            char openBracket = brackets.pop();
+                char openBracket = brackets.pop();
 
-            switch (bracket) {
-                case ')':
-                    if (openBracket != '(') {
-                        return false;
-                    }
-                    break;
-                case '}':
-                    if (openBracket != '{') {
-                        return false;
-                    }
-                    break;
-                case ']':
-                    if (openBracket != '[') {
-                        return false;
-                    }
-                    break;
+                switch (bracket) {
+                    case ')':
+                        if (openBracket != '(') {
+                            return false;
+                        }
+                        break;
+
+                    case '}':
+                        if (openBracket != '{') {
+                            return false;
+                        }
+                        break;
+
+                    case ']':
+                        if (openBracket != '[') {
+                            return false;
+                        }
+                        break;
+                }
             }
         }
+
         return brackets.isEmpty();
     }
 }

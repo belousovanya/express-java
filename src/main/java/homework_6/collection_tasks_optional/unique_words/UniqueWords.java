@@ -1,4 +1,4 @@
-package homework_6.unique_words;
+package homework_6.collection_tasks_optional.unique_words;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +12,7 @@ public class UniqueWords {
     Set<String> words = new HashSet<>();
 
     public void addWord(String text) {
-        String[] wordsArray = text.split(" ");
+        String[] wordsArray = text.toLowerCase().trim().split("\\s+");
 
         for (String word : wordsArray) {
             words.add(word);

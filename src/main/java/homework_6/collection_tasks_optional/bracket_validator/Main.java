@@ -1,4 +1,4 @@
-package homework_6.bracket_validator;
+package homework_6.collection_tasks_optional.bracket_validator;
 
 public class Main {
     public static void main(String[] args) {

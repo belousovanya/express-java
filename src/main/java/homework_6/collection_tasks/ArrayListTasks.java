@@ -3,8 +3,6 @@ package homework_6.collection_tasks;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class ArrayListTasks {
     public static void main(String[] args) {
@@ -30,14 +28,14 @@ public class ArrayListTasks {
 
         numbers.add(10);
 
-        System.out.println("Список чисел (второй вариант решения) -" + numbers);
+        System.out.println("Список чисел (первый вариант решения) - " + numbers);
     }
 
     public static void task1SecondVariant() {
         List<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
 
         numbers.add(10);
-        System.out.println("Список чисел -" + numbers);
+        System.out.println("Список чисел (второй вариант решения) - " + numbers);
     }
 
 
@@ -55,11 +53,11 @@ public class ArrayListTasks {
         numbers.add(10);
 
         System.out.println("Все четные числа:");
-        numbers.forEach(number -> {
+        for (Integer number : numbers) {
             if (number % 2 == 0) {
                 System.out.println(number);
             }
-        });
+        }
     }
 
     /* Задача 3:
@@ -73,13 +71,13 @@ public class ArrayListTasks {
         words.add("Лето");
         words.add("Весна");
 
-        AtomicReference<String> longestWord = new AtomicReference<>(words.getFirst());
+        String longestWord = words.getFirst();
 
-        words.forEach(word -> {
-            if (word.length() > longestWord.get().length()) {
-                longestWord.set(word);
+        for (String word : words) {
+            if (word.length() > longestWord.length()) {
+                longestWord = word;
             }
-        });
+        }
         System.out.println("Самое длинное слово - " + longestWord);
     }
 
@@ -95,11 +93,11 @@ public class ArrayListTasks {
         numbers.add(30);
         numbers.add(40);
 
-        AtomicInteger sum = new AtomicInteger();
+        int sum = 0;
 
-        numbers.forEach(number -> {
-            sum.set(sum.get() + number);
-        });
+        for (Integer number : numbers) {
+            sum += number;
+        }
         System.out.println("Сумма всех чисел = " + sum);
     }
 
@@ -116,13 +114,13 @@ public class ArrayListTasks {
         numbers.add(30);
         numbers.add(40);
 
-        AtomicInteger max = new AtomicInteger(numbers.getFirst());
+        int max = numbers.getFirst();
 
-        numbers.forEach(number -> {
-            if (number > max.get()) {
-                max.set(number);
+        for (Integer number : numbers) {
+            if (number > max) {
+                max = number;
             }
-        });
+        }
         System.out.println("Максимальное число из списка = " + max);
     }
 }

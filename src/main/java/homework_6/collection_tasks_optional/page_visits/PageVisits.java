@@ -1,4 +1,4 @@
-package homework_6.page_visits;
+package homework_6.collection_tasks_optional.page_visits;
 
 import java.util.HashSet;
 import java.util.Set;

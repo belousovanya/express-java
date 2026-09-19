@@ -1,4 +1,4 @@
-package homework_6.user_history;
+package homework_6.collection_tasks_optional.user_history;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -10,28 +10,31 @@ import java.util.Deque;
  */
 public class UserHistory {
     private Deque<String> history = new ArrayDeque<>();
-    private Deque<String> repeatedActions = new ArrayDeque<>();
+    private Deque<String> redoActions = new ArrayDeque<>();
 
     public void addUserAction(String action) {
         history.push(action);
+        redoActions.clear();
     }
 
     public void undoUserAction() {
-        String action = history.pop();
-        repeatedActions.push(action);
+        if (!history.isEmpty()) {
+            String action = history.pop();
+            redoActions.push(action);
+        }
     }
 
     public void redoUserAction() {
-        String action = repeatedActions.pop();
-        history.push(action);
+        if (!redoActions.isEmpty()) {
+            String action = redoActions.pop();
+            history.push(action);
+        }
     }
 
     public void printActions() {
         System.out.println("Действия в истории:");
         history.forEach(System.out::println);
-
-        System.out.println("Действия в повторённых действиях:");
-        repeatedActions.forEach(System.out::println);
+        System.out.println("Действия для повтора:");
+        redoActions.forEach(System.out::println);
     }
-
 }

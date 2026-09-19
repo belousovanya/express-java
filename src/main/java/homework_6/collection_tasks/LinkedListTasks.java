@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Queue;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class LinkedListTasks {
     public static void main(String[] args) {
@@ -79,13 +78,13 @@ public class LinkedListTasks {
         numbers.add(30);
         numbers.add(40);
 
-        AtomicInteger sum = new AtomicInteger();
+        int sum = 0;
 
-        numbers.forEach(number -> {
-            sum.set(sum.get() + number);
-        });
+        for (Integer number : numbers) {
+            sum += number;
+        }
 
-        System.out.println("Сумма элементов списка = " + sum.get());
+        System.out.println("Сумма элементов списка = " + sum);
     }
 
     /*

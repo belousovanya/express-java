@@ -1,4 +1,4 @@
-package homework_6.user_history;
+package homework_6.collection_tasks_optional.user_history;
 
 public class Main {
     public static void main(String[] args) {

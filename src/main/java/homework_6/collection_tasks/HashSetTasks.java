@@ -70,10 +70,10 @@ public class HashSetTasks {
         words.add("Java");
 
         System.out.println("Добавленные слова: " + words);
-        System.out.println("Уникальные слова: " + returntUniqueWords(words));
+        System.out.println("Уникальные слова: " + returnUniqueWords(words));
     }
 
-    public static Set<String> returntUniqueWords(List<String> words) {
+    public static Set<String> returnUniqueWords(List<String> words) {
         return new HashSet<>(words);
     }
 

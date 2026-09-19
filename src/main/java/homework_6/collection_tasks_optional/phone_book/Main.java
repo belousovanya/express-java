@@ -1,4 +1,4 @@
-package homework_6.phone_book;
+package homework_6.collection_tasks_optional.phone_book;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package homework_6.page_visits;
+package homework_6.collection_tasks_optional.page_visits;
 
 public class Main {
     public static void main(String[] args) {
