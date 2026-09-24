@@ -6,8 +6,12 @@ package homework_7.exceptions;
 Если возраст меньше 0 или больше 150, метод должен выбрасывать проверяемое исключение.
  */
 public class MyOwnCheckedExceptionTask {
-    public static void main(String[] args) throws InvalidAgeException {
-        checkAge(151);
+    public static void main(String[] args) {
+        try {
+            checkAge(151);
+        } catch (InvalidAgeException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
     }
 
     public static void checkAge(int age) throws InvalidAgeException {

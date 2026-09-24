@@ -10,8 +10,11 @@ import java.util.regex.Pattern;
  */
 public class MyOwnUncheckedExceptionTask {
     public static void main(String[] args) {
-        checkEmail("anna@gmail");
-
+        try {
+            checkEmail("anna@gmail");
+        } catch (InvalidEmailException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void checkEmail(String email) {

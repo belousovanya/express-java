@@ -34,8 +34,8 @@ public class Main {
         System.out.println(doubleNumberBox.getSum());
 
         // SumCalculator task
-        SumCalculator.sum(Arrays.asList(2, 2, 3));
-        SumCalculator.sum(Arrays.asList(2.5, 2.1, 3.5));
+        System.out.println(SumCalculator.sum(Arrays.asList(2, 2, 3)));
+        System.out.println(SumCalculator.sum(Arrays.asList(2.5, 2.1, 3.5)));
 
         // IntegerAdder task
         List<Number> numbersList = new ArrayList<>();
