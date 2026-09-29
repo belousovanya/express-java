@@ -3,7 +3,7 @@ package practice_9.collablefuture;
 import java.util.Random;
 import java.util.concurrent.*;
 
-public class CollableFutureExcample {
+public class CollableFutureExample {
     // Сложные расчеты ДНК
     // Наша задача - дождаться вычисления и получить результат
     public static void main(String[] args) throws ExecutionException, InterruptedException {
