@@ -1,5 +1,6 @@
 package homework_9.lock;
 
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.ReentrantLock;
 
 /*
@@ -12,6 +13,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class BankAccount {
     private int balance;
     private final ReentrantLock lock = new ReentrantLock();
+    private static final AtomicLong NEXT_ID = new AtomicLong();
+    private final long id = NEXT_ID.getAndIncrement();
 
     public BankAccount(int balance) {
         this.balance = balance;
@@ -22,17 +25,28 @@ public class BankAccount {
     }
 
     public void transferTo(BankAccount other, int amount) {
-        lock.lock();
-        other.lock.lock();
+        BankAccount first;
+        BankAccount second;
+
+        if (this.id < other.id) {
+            first = this;
+            second = other;
+        } else {
+            first = other;
+            second = this;
+        }
+
+        first.lock.lock();
+        second.lock.lock();
 
         try {
-            if (balance >= amount) {
-                balance -= amount;
+            if (this.balance >= amount) {
+                this.balance -= amount;
                 other.balance += amount;
             }
         } finally {
-            other.lock.unlock();
-            lock.unlock();
+            second.lock.unlock();
+            first.lock.unlock();
         }
     }
 }

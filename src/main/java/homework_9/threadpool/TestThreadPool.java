@@ -18,21 +18,23 @@ public class TestThreadPool {
 
         ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
 
-        Callable<String> task = () -> {
-            Thread.sleep(2000);
-            return "Задача выполнена";
-        };
+        try {
+            Callable<String> task = () -> {
+                Thread.sleep(2000);
+                return "Задача выполнена";
+            };
+            List<Future<String>> futureList = new ArrayList<>();
 
-        List<Future<String>> futureList = new ArrayList<>();
+            for (int i = 0; i < threadCount; i++) {
+                Future<String> future = executorService.submit(task);
+                futureList.add(future);
+            }
 
-        for (int i = 0; i < threadCount; i++) {
-            Future<String> future = executorService.submit(task);
-            futureList.add(future);
+            for (Future<String> future : futureList) {
+                System.out.println(future.get());
+            }
+        } finally {
+            executorService.shutdown();
         }
-
-        for (Future<String> future : futureList) {
-            System.out.println(future.get());
-        }
-        executorService.shutdown();
     }
 }

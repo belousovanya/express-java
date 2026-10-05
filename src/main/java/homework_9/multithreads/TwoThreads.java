@@ -18,6 +18,7 @@ public class TwoThreads {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
+                    return;
                 }
                 count++;
             }
@@ -33,6 +34,7 @@ public class TwoThreads {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
+                    return;
                 }
                 count++;
             }

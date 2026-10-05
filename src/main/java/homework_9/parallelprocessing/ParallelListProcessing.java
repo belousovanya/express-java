@@ -41,12 +41,15 @@ public class ParallelListProcessing {
         }
 
         int totalSum = 0;
+        int totalCount = 0;
 
         for (Future<Integer> future : futureList) {
             totalSum += future.get();
+            totalCount += elementsPerThread;
         }
 
         System.out.println("Общая сумма: " + totalSum);
+        System.out.println("Количество обработанных элементов: " + totalCount);
 
         executorService.shutdown();
 
